@@ -8,6 +8,7 @@ So far, the project includes:
 
 - Phase 1: Race condition demonstration using unsafe shared data access
 - Phase 2: Mutex protection using per-account locks and safe transfers
+- Phase 3: Intentional deadlock creation and stalled-thread detection
 
 Future phases will explore deadlock creation and resolution.
 
@@ -23,6 +24,7 @@ To compile individually:
 
 make phase1
 make phase2
+make phase3
 
 ---
 
@@ -47,6 +49,23 @@ make phase2
 
 ---
 
+### Phase 3 – Deadlock Demonstration
+
+./phase3
+
+Intentionally creates a deadlock by locking resources in inconsistent order.
+Two threads each hold one lock while waiting for the other,
+satisfying all four Coffman conditions:
+
+- Mutual exclusion
+- Hold and wait
+- No preemption
+- Circular wait
+
+The program detects stalled progress and reports a suspected deadlock.
+
+---
+
 ## Concepts Demonstrated (So Far)
 
 - Thread creation and joining
@@ -54,6 +73,8 @@ make phase2
 - Race conditions
 - Critical sections
 - Mutex-based mutual exclusion
+- Deadlock creation
+- Deadlock detection concepts
 
 ---
 
