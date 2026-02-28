@@ -48,6 +48,7 @@ make phase4
 
 -Adds mutex locks to protect critical sections.
 -Transfers are now thread-safe and the total balance remains constant.
+-Execution time is measured to compare performance with other phases.
 
 ---
 
@@ -75,6 +76,7 @@ The program detects stalled progress and reports a suspected deadlock.
 Prevents deadlock by enforcing consistent lock ordering.
 All threads acquire locks in the same order, eliminating circular wait.
 The program completes successfully while preserving the total balance.
+Execution time is measured to compare performance with other phases.
 
 ---
 
