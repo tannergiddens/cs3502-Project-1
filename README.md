@@ -9,6 +9,7 @@ So far, the project includes:
 - Phase 1: Race condition demonstration using unsafe shared data access
 - Phase 2: Mutex protection using per-account locks and safe transfers
 - Phase 3: Intentional deadlock creation and stalled-thread detection
+- Phase 4: Deadlock prevention using consistent lock ordering
 
 Future phases will explore deadlock creation and resolution.
 
@@ -25,6 +26,7 @@ To compile individually:
 make phase1
 make phase2
 make phase3
+make phase4
 
 ---
 
@@ -66,7 +68,17 @@ The program detects stalled progress and reports a suspected deadlock.
 
 ---
 
-## Concepts Demonstrated (So Far)
+### Phase 4 – Deadlock Resolution
+
+./phase4
+
+Prevents deadlock by enforcing consistent lock ordering.
+All threads acquire locks in the same order, eliminating circular wait.
+The program completes successfully while preserving the total balance.
+
+---
+
+## Concepts Demonstrated
 
 - Thread creation and joining
 - Shared memory concurrency
@@ -75,6 +87,7 @@ The program detects stalled progress and reports a suspected deadlock.
 - Mutex-based mutual exclusion
 - Deadlock creation
 - Deadlock detection concepts
+- Deadlock prevention via lock ordering 
 
 ---
 
